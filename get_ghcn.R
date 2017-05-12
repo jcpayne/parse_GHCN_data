@@ -26,7 +26,7 @@ get_ghcn<-function(FTP,ghcnlist){
           if (ce == 42) stop("The FTP server is not responding. Please try again later.") #stop after 21 minutes
         } else{
           ## write to file
-          outfile = file ( paste(getwd(),ghcnName,sep="/"), open="wb")
+          outfile = file ( paste0(getwd(),"/",ghcnName,".dly"), open="wb")
           writeBin(object = er, con = outfile ) 
           close(outfile)
           print(paste(ghcnName,"successfully downloaded."))
